@@ -1,0 +1,32 @@
+<div class="general">
+    <div class="general__wrapper">
+        <div *ngFor="let post of posts" class="book">
+            <div class="book__wrapper">
+                <p class="book__id">{{ post.id }}</p>
+                <p class="book__title">{{ post.title }}</p>
+            </div>
+        
+            <div>
+                <button aria-label="add-to-cart" class="book__btn" (click)="addToCart(post.id, post.title)"><img src="../../assets/img/buy.png" alt="cart"/></button>
+                <button aria-label="delete-post" class="book__btn" (click)="deletePost(post.id)"><img src="../../assets/img/delete.png" alt="delete"/></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="buyList">
+        <h2>Buy list</h2>
+
+        <hr />
+
+        <div *ngFor="let book of bookToCart" class="book">
+            <div class="book__wrapper">
+                <p class="book__id">{{ book.id }}</p>
+                <p class="book__title">{{ book.title }}</p>
+            </div>
+        
+            <div>
+                <button class="book__btn" (click)="deletePostFromList(book.id)"><img src="../../assets/img/delete.png" alt="cart"/></button>
+            </div>
+        </div>
+    </div>
+</div>

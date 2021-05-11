@@ -1,0 +1,9 @@
+<div class="contact">
+    <h3>Do you have a suggestion for us? Write, please!</h3>
+    <div class="contact__wrapper">
+        <input [(ngModel)]="name" class="contact__input" type="text" placeholder="Your name.."/>
+        <input [(ngModel)]="title" class="contact__input" type="text" placeholder="Title.."/>
+        <textarea [(ngModel)]="suggestion" placeholder="Write your suggestion..."></textarea>
+        <button (click)="send()" class="contact__btn">SEND</button>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="task">
+    <h1>We have a great opportunity to get a random daily task for you!</h1>
+    <div class="task__wrapper">
+        <p class="task__type">Type: {{ task.type.toUpperCase() }}</p>
+        <p class="task__part">Participants: {{ task.participants }}</p>
+        <p class="task__block">{{ task.activity }}</p>
+    </div>
+    <button class="task__btn" (click)="getRandomTask()">GET A TASK</button>
+</div>
