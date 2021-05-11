@@ -10,6 +10,7 @@ export class LoginComponent {
 
   username = '';
   password = '';
+  hidden:boolean = true;
 
   log = 'username';
   pass = '12345678';
@@ -22,7 +23,7 @@ export class LoginComponent {
       this.router.navigate(['/mainpage/home']);
       this.username = this.password = '';
     } else {
-      alert('Invalid username or password')
+      this.hidden = false
     }
   }
 

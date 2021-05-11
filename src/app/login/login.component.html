@@ -13,5 +13,7 @@
         [(ngModel)]="password"
     />
 
+    <div class="login__error" [hidden]="hidden">Invalid username or password</div>
+
     <button (click)="login()" class="login__btn">Login</button>
 </div>

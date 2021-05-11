@@ -15,6 +15,7 @@ export class BooksComponent implements OnInit {
 
   posts:any = [];
   bookToCart:any = [];
+  hidden:boolean = true;
 
   constructor(private http: HttpClient) { }
 
@@ -36,9 +37,13 @@ export class BooksComponent implements OnInit {
     }
     this.bookToCart.unshift(book);
     this.bookToCart.sort((a:any, b:any) => a.id > b.id ? 1 : -1);
+    this.hidden = false;
   }
 
   deletePostFromList(id:number) {
     this.bookToCart = this.bookToCart.filter((post: any) => post.id !== id);
+    if (this.bookToCart === []) {
+      this.hidden = true;
+    }
   }
 }
